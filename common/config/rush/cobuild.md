@@ -1,0 +1,23 @@
+# Cobuild Configuration
+
+This configuration file manages Rush's cobuild feature. More documentation is available on the Rush website: https://rushjs.io
+
+## $schema
+
+- Type: string
+- Description: URL to the JSON schema for validation
+- Value: "https://developer.microsoft.com/json-schemas/rush/v5/cobuild.schema.json"
+
+## cobuildFeatureEnabled
+
+- Type: boolean
+- Required: true
+- Description: EXPERIMENTAL - Set this to true to enable the cobuild feature. RUSH_COBUILD_CONTEXT_ID should always be specified as an environment variable with a non-empty string, otherwise the cobuild feature will be disabled.
+- Value: false
+
+## cobuildLockProvider
+
+- Type: string
+- Required: true
+- Description: Choose where cobuild lock will be acquired. The lock provider is registered by the rush plugins. For example, @rushstack/rush-redis-cobuild-plugin registers the "redis" lock provider.
+- Value: "redis"
